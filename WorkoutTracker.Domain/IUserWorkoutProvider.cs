@@ -1,9 +1,12 @@
 using System.Collections.Generic;
-using WorkoutTracker.Domain.Strength;
+using System.Threading.Tasks;
+using WorkoutTracker.Domain.Models;
 
 namespace WorkoutTracker.Domain {
     public interface IUserWorkoutProvider {
-        IEnumerable<StrengthWorkout> GetAll();
-        StrengthWorkout GetById(int id);
+        Task<IEnumerable<Workout>> GetAll();
+        Task<Workout> GetById(int id);
+
+        Task<Workout> AddNew();
     }
 }

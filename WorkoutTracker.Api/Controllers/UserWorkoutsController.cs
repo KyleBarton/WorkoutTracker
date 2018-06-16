@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WorkoutTracker.Api.Contracts;
 using WorkoutTracker.Domain;
+using WorkoutTracker.Domain.Models;
 
 namespace WorkoutTracker.Api.Controllers
 {
@@ -14,28 +16,29 @@ namespace WorkoutTracker.Api.Controllers
             _workoutProvider = workoutProvider;
         }
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
             //todo page
-            return Ok(_workoutProvider.GetAll());
+            return Ok(await _workoutProvider.GetAll());
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return Ok(_workoutProvider.GetById(id));
+            return Ok(await _workoutProvider.GetById(id));
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]AddWorkoutRequest workoutRequest)
+        public async Task<IActionResult> Post([FromBody]AddWorkoutRequest workoutRequest)
         {
+            var createdWorkout = await _workoutProvider.AddNew();
             return Ok("Yeah, sure I made a new one");
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            return Ok("YOU'RE FIRED");
+            return BadRequest("We do not currently support workout deletions");
         }
     }
 }

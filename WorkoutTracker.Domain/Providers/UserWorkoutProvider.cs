@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using WorkoutTracker.Domain.Models;
 using WorkoutTracker.Domain.Strength;
 
 namespace WorkoutTracker.Domain.Providers{
@@ -10,12 +12,18 @@ namespace WorkoutTracker.Domain.Providers{
             //TODO inject with some sort of provider
             _userId = 1;
         }
-        public IEnumerable<StrengthWorkout> GetAll()
+
+        public async Task<Workout> AddNew()
         {
             throw new System.NotImplementedException();
         }
 
-        public StrengthWorkout GetById(int id)
+        public async Task<IEnumerable<Workout>> GetAll()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public async Task<Workout> GetById(int id)
         {
             throw new System.NotImplementedException();
         }

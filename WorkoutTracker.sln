@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Api", "Worko
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Domain", "WorkoutTracker.Domain\WorkoutTracker.Domain.csproj", "{B1090A5D-18C7-4ED6-BFBA-4B58EA77B19D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkoutTracker.Domain.UnitTests", "WorkoutTracker.Domain.UnitTests\WorkoutTracker.Domain.UnitTests.csproj", "{93E5FF33-15DC-40E3-A90B-602CD5ABFCF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{B1090A5D-18C7-4ED6-BFBA-4B58EA77B19D}.Release|x64.Build.0 = Release|x64
 		{B1090A5D-18C7-4ED6-BFBA-4B58EA77B19D}.Release|x86.ActiveCfg = Release|x86
 		{B1090A5D-18C7-4ED6-BFBA-4B58EA77B19D}.Release|x86.Build.0 = Release|x86
+		{93E5FF33-15DC-40E3-A90B-602CD5ABFCF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93E5FF33-15DC-40E3-A90B-602CD5ABFCF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93E5FF33-15DC-40E3-A90B-602CD5ABFCF1}.Debug|x64.ActiveCfg = Debug|x64
+		{93E5FF33-15DC-40E3-A90B-602CD5ABFCF1}.Debug|x64.Build.0 = Debug|x64
+		{93E5FF33-15DC-40E3-A90B-602CD5ABFCF1}.Debug|x86.ActiveCfg = Debug|x86
+		{93E5FF33-15DC-40E3-A90B-602CD5ABFCF1}.Debug|x86.Build.0 = Debug|x86
+		{93E5FF33-15DC-40E3-A90B-602CD5ABFCF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93E5FF33-15DC-40E3-A90B-602CD5ABFCF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93E5FF33-15DC-40E3-A90B-602CD5ABFCF1}.Release|x64.ActiveCfg = Release|x64
+		{93E5FF33-15DC-40E3-A90B-602CD5ABFCF1}.Release|x64.Build.0 = Release|x64
+		{93E5FF33-15DC-40E3-A90B-602CD5ABFCF1}.Release|x86.ActiveCfg = Release|x86
+		{93E5FF33-15DC-40E3-A90B-602CD5ABFCF1}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal

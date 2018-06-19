@@ -8,14 +8,17 @@ namespace WorkoutTracker.Domain.Providers{
     {
         private readonly int _userId;
 
-        public UserWorkoutProvider(){
+        public UserWorkoutProvider(int userId){
             //TODO inject with some sort of provider
-            _userId = 1;
+            _userId = userId;
         }
 
+        //TODO add async naming convention
         public async Task<Workout> AddNew()
         {
-            throw new System.NotImplementedException();
+            return new Workout {
+                Status = WorkoutStatus.New
+            };
         }
 
         public async Task<IEnumerable<Workout>> GetAll()

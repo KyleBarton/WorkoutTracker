@@ -3,22 +3,23 @@ using System.Threading.Tasks;
 using WorkoutTracker.Domain.Models;
 using WorkoutTracker.Domain.Strength;
 
-namespace WorkoutTracker.Domain.Providers{
+namespace WorkoutTracker.Domain.Providers
+{
     public class UserWorkoutProvider : IUserWorkoutProvider
     {
+        public IUserWorkoutRepository _repository { get; }
+
         private readonly int _userId;
 
-        public UserWorkoutProvider(int userId){
-            //TODO inject with some sort of provider
+        public UserWorkoutProvider(int userId, IUserWorkoutRepository repository){
+            _repository = repository;
             _userId = userId;
         }
 
         //TODO add async naming convention
         public async Task<Workout> AddNew()
         {
-            return new Workout {
-                Status = WorkoutStatus.New
-            };
+            return await _repository.CreateNew();
         }
 
         public async Task<IEnumerable<Workout>> GetAll()
@@ -28,7 +29,7 @@ namespace WorkoutTracker.Domain.Providers{
 
         public async Task<Workout> GetById(int id)
         {
-            throw new System.NotImplementedException();
+            return await _repository.GetById(id);
         }
     }
 }

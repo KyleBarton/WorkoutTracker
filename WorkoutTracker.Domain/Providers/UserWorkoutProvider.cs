@@ -22,9 +22,9 @@ namespace WorkoutTracker.Domain.Providers
             return await _repository.CreateNew();
         }
 
-        public async Task<IEnumerable<Workout>> GetAll()
+        public async Task<IEnumerable<Workout>> GetAll(PageInfo pageInfo)
         {
-            throw new System.NotImplementedException();
+            return await _repository.GetPaged(pageInfo);
         }
 
         public async Task<Workout> GetById(int id)

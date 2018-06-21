@@ -19,7 +19,7 @@ namespace WorkoutTracker.Api.Controllers
         public async Task<IActionResult> Get()
         {
             //todo page
-            return Ok(await _workoutProvider.GetAll());
+            return Ok(await _workoutProvider.GetAll(new PageInfo(1, 10)));
         }
 
         [HttpGet("{id}")]

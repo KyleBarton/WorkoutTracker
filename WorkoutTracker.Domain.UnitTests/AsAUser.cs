@@ -4,6 +4,7 @@ using NUnit.Framework;
 using WorkoutTracker.Domain.Models;
 using WorkoutTracker.Domain.Providers;
 using Moq;
+using System.Collections.Generic;
 
 namespace WorkoutTracker.Domain.UnitTests
 {
@@ -38,6 +39,23 @@ namespace WorkoutTracker.Domain.UnitTests
 
             workoutRetrieved.Should().BeEquivalentTo(newWorkout);
             newWorkout.Status.Should().Be(WorkoutStatus.New);
+        }
+
+        [Test]
+        public async Task I_Should_Be_Able_To_Get_My_Workouts(){
+            List<Workout> expectedWorkouts = new List<Workout> {
+               new Workout{
+                   Id = 1,
+                   Status = WorkoutStatus.New
+               },
+               new Workout{
+                   Id = 2,
+                   Status = WorkoutStatus.New
+               }
+           };
+            _mockRepository.Setup(r => r.GetPaged(It.IsAny<PageInfo>())).ReturnsAsync(expectedWorkouts);
+
+            (await _workoutProvider.GetAll(new PageInfo(1, 10))).Should().BeEquivalentTo(expectedWorkouts);
         }
     }
 }

@@ -5,6 +5,7 @@ using WorkoutTracker.Domain.Models;
 using WorkoutTracker.Domain.Providers;
 using Moq;
 using System.Collections.Generic;
+using WorkoutTracker.Domain.Repositories;
 
 namespace WorkoutTracker.Domain.UnitTests
 {

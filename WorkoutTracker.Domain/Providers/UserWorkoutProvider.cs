@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using WorkoutTracker.Domain.Models;
+using WorkoutTracker.Domain.Repositories;
 using WorkoutTracker.Domain.Strength;
 
 namespace WorkoutTracker.Domain.Providers

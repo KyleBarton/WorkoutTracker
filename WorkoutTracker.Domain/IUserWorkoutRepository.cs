@@ -6,7 +6,7 @@ namespace WorkoutTracker.Domain.Repositories
 {
     public interface IUserWorkoutRepository
     {
-        Task<Workout> CreateNew();
+        Task<Workout> CreateNew(Workout workout);
         Task<Workout> GetById(int id);
         Task<IEnumerable<Workout>> GetPaged(PageInfo pageInfo);
     }

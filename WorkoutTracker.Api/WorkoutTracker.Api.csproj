@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WorkoutTracker.Domain\WorkoutTracker.Domain.csproj" />
+    <ProjectReference Include="..\WorkoutTracker.DataAccess\WorkoutTracker.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

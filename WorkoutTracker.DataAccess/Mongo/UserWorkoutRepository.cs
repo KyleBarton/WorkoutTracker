@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using WorkoutTracker.Domain.Models;
 using WorkoutTracker.Domain.Repositories;
@@ -8,16 +10,20 @@ namespace WorkoutTracker.DataAccess.Mongo {
 
     public class UserWorkoutRepository : IUserWorkoutRepository
     {
+        private readonly IMongoCollection<Workout> _userWorkoutsCollection;
+
         public UserWorkoutRepository(){
             var client = new MongoClient("mongodb://localhost:27017");
             var db = client.GetDatabase("WorkoutTracker");
-            var userWorkoutsCollection = db.GetCollection<Workout>("Workouts");
+            _userWorkoutsCollection = db.GetCollection<Workout>("Workouts");
         }
-        public Task<Workout> CreateNew()
+        public async Task<Workout> CreateNew(Workout workout)
         {
-            throw new System.NotImplementedException();
+            var workoutCount = await _userWorkoutsCollection.CountAsync(new BsonDocument());
+            workout.Id = (int)workoutCount + 1;
+            await _userWorkoutsCollection.InsertOneAsync(workout);
+            return workout;
         }
-
         public Task<Workout> GetById(int id)
         {
             throw new System.NotImplementedException();

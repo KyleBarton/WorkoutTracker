@@ -17,10 +17,13 @@ namespace WorkoutTracker.Domain.Providers
             _userId = userId;
         }
 
-        //TODO add async naming convention
         public async Task<Workout> AddNew()
         {
-            return await _repository.CreateNew();
+            return await _repository.CreateNew(new Workout{
+                UserId = _userId,
+                Status = WorkoutStatus.New,
+                Exercises = new List<Exercise>()
+            });
         }
 
         public async Task<IEnumerable<Workout>> GetAll(PageInfo pageInfo)

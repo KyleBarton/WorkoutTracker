@@ -11,7 +11,7 @@ namespace WorkoutTracker.Domain.UnitTests.Mocks {
         public InMemoryUserWorkoutRepository(){
             _entities = new List<Workout>();
         }
-        public Task<Workout> CreateNew()
+        public Task<Workout> CreateNew(Workout workout)
         {
             throw new System.NotImplementedException();
         }

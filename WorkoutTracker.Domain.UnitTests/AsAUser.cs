@@ -20,7 +20,7 @@ namespace WorkoutTracker.Domain.UnitTests
             _mockRepository = new Mock<IUserWorkoutRepository>();
             _workoutProvider = new UserWorkoutProvider(UserId, _mockRepository.Object);
 
-            _mockRepository.Setup(r => r.CreateNew()).ReturnsAsync(new Workout {
+            _mockRepository.Setup(r => r.CreateNew(It.IsAny<Workout>())).ReturnsAsync(new Workout {
                     Id = RandomUserWorkoutId,
                     Status = WorkoutStatus.New
             });

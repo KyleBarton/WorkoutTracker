@@ -4,4 +4,5 @@ dotnet: 2.1.105
 script:
   - dotnet build WorkoutTracker.sln
   - dotnet test WorkoutTracker.Domain.UnitTests/WorkoutTracker.Domain.UnitTests.csproj --no-build
+  - dotnet publish WorkoutTracker.Api/WorkoutTracker.Api.csproj --runtime ubuntu-x64 --self-contained --output ./artifacts
   - echo 'done!'

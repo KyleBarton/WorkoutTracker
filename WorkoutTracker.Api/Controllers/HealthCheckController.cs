@@ -12,5 +12,10 @@ namespace WorkoutTracker.Api.Controllers
         {
             return Ok();
         }
+
+        [HttpGet("/test/{name}")]
+        public IActionResult GetTest(string name){
+            return Ok($"Hello, {name}");
+        }
     }
 }

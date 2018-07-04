@@ -13,7 +13,7 @@ namespace WorkoutTracker.DataAccess.Mongo {
         private readonly IMongoCollection<Workout> _userWorkoutsCollection;
 
         public UserWorkoutRepository(){
-            var client = new MongoClient("mongodb://localhost:27017");
+            var client = new MongoClient("mongodb://10.0.0.97:27017");
             var db = client.GetDatabase("WorkoutTracker");
             _userWorkoutsCollection = db.GetCollection<Workout>("Workouts");
         }

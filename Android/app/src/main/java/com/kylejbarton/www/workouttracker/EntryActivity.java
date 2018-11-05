@@ -14,7 +14,7 @@ public class EntryActivity extends AppCompatActivity {
     }
 
     public void startWorkout(View view){
-        Intent intentToStart = new Intent(this, OngoingWorkoutActivity.class);
-        startActivity(intentToStart);
+        Intent startWorkoutIntent = new Intent(this, OngoingWorkoutActivity.class);
+        startActivity(startWorkoutIntent);
     }
 }

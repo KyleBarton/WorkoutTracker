@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.EditText;
 
 import java.util.Calendar;
-import java.util.Date;
 
 public class OngoingWorkoutActivity extends AppCompatActivity {
 
